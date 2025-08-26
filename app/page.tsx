@@ -53,7 +53,8 @@ export default function HomePage() {
 
       // Check if it's a new record
       const currentHighScores = storedData.highScores[currentDifficulty] || []
-      const isNewRecord = currentHighScores.length === 0 || score > currentHighScores[0]?.score
+      const isNewRecord = currentHighScores.length === 0 || 
+        (currentHighScores[0] && score > currentHighScores[0].score)
 
       // Update stored data
       const updatedData: StoredGameData = {
